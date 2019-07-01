@@ -1,0 +1,25 @@
+{
+  "name": "node-crawler",
+  "version": "1.0.0",
+  "description": "An application that crawls the web for relevant product results",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "web",
+    "crawler"
+  ],
+  "author": "Daniel Clayton",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

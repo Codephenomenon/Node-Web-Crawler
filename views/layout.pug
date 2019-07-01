@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+head
+    title #{ title }
+    link(rel='stylesheet' href='/style.css' type='text/css')
+    link( rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap')
+body
+    block content
+        div.banner
+            h1.banner_title Website Finder.
+            p.banner_text Search the internet for a list of similar websites. To start using this tool simply type in the name of a website and browse the list of results. Like webpages with content you want to see to find more relevant results.
+            div.clipContain
+                div.banner_clip
+                    img.banner_clip-node(src="/node-js-logo.png" alt="Node Logo")
+            div.controlPanel 
+                label.controlPanel_label(for="input") Search:
+                input.controlPanel_input#input(type='text', placeholder='www.example.com', name='website')
+                button.controlPanel_submit(type='submit') Submit
+                div.controlPanel_controls
+                    label(for='food_category') Food
+                        input(type='radio', name='food_category' value='1')
+                    label(for='food_category') Entertainment
+                        input(type='radio', name='entertainment_category' value='2')
+                    label(for='food_category') Commerce
+                        input(type='radio', name='commerce_category' value='3')
+                    label(for='food_category') Health
+                        input(type='radio', name='health_category' value='4')
+                    label(for='food_category') Travel
+                        input(type='radio', name='travel_category' value='5')
+                    label(for='food_category') Art
+                        input(type='radio', name='art_category' value='6')
+        div.listContainer
+            ul.listContainer_list
+    block footer
+        footer.footer
+            p footer content

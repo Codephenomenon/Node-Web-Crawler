@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: block;
+}
+
+title {
+    display: none;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #FFF;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 30rem;
+    background-color: #26BFBF;
+    color: #FFF;
+    padding: 5rem;
+    position: relative;
+    z-index: 1;
+    /*filter: drop-shadow(1rem 1rem 1rem black);*/
+}
+
+.clipContain {
+    position: absolute;
+    right: 0;
+    top: 0;
+    filter: drop-shadow(0.5rem 0.5rem 0.3rem rgba(0,0,0,0.4));
+}
+
+.banner_clip {
+    height: 20rem;
+    width: 35rem;
+    background-color: #FFF;
+    z-index: 10;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.banner_clip-node {
+    position: absolute;
+    z-index: 15;
+    top: 2.5rem;
+    right: 2rem;
+    max-width: 15rem;
+}
+
+.banner_title {
+    font-size: 3rem;
+    clear: right;
+}
+
+.banner_text {
+    margin-left: 1rem;
+    max-width: 40rem;
+}
+
+.controlPanel {
+    width: 100%;
+    max-width: 40rem;
+    height: 20rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65%;
+    background-color: #FFF;
+    z-index: 10;
+    box-shadow: 0.2rem 0.2rem 0.3rem rgba(0,0,0,0.4);
+    color: #080708;
+}
+
+.listContainer {
+    width: 100%;
+    min-height: calc(100vh - 33rem);
+    height: 100%;
+    background-color: #FFF;
+    padding: 12rem 5rem 2rem 5rem;
+}
+
+.listContainer_list {
+    width: 100%;
+    height: 100%;
+    background-color: #ebebeb;
+}
+
+.footer {
+    width: 100%;
+    height: 3rem;
+    background-color: #181518;
+}
