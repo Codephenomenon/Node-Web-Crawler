@@ -74,6 +74,35 @@ body {
     z-index: 10;
     box-shadow: 0.2rem 0.2rem 0.3rem rgba(0,0,0,0.4);
     color: #080708;
+    display: flex;
+    flex-direction: column;
+}
+
+.controlPanel_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30%;
+}
+
+.controlPanel_input-label {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.controlPanel_input-input {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    width: 100%;
+    max-width: 12rem;
+}
+
+.controlPanel_controls {
+    display: flex;
+    flex: 0 0 70%;
 }
 
 .listContainer {

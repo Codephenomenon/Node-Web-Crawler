@@ -8,14 +8,15 @@ body
     block content
         div.banner
             h1.banner_title Website Finder.
-            p.banner_text Search the internet for a list of similar websites. To start using this tool simply type in the name of a website and browse the list of results. Like webpages with content you want to see to find more relevant results.
+            p.banner_text Search the internet for a list of similar webpages. To start using this tool simply type in the name of a website and browse the list of results. Like webpages with content you want to see to find more relevant results.
             div.clipContain
                 div.banner_clip
                     img.banner_clip-node(src="/node-js-logo.png" alt="Node Logo")
             div.controlPanel 
-                label.controlPanel_label(for="input") Search:
-                input.controlPanel_input#input(type='text', placeholder='www.example.com', name='website')
-                button.controlPanel_submit(type='submit') Submit
+                div.controlPanel_input
+                    label.controlPanel_input-label(for="input") Search:
+                    input.controlPanel_input-input#input(type='text', placeholder='www.example.com', name='website')
+                    button.controlPanel_input-submit(type='submit') Submit
                 div.controlPanel_controls
                     label(for='food_category') Food
                         input(type='radio', name='food_category' value='1')
