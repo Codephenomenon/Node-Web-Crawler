@@ -4,6 +4,22 @@ head
     title #{ title }
     link(rel='stylesheet' href='/style.css' type='text/css')
     link( rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap')
+
+    script(type="text/javascript").
+        window.addEventListener('load', function() {
+            let userRequest = {
+                url: '',
+                keyWords: []
+            };
+            const filters = document.querySelectorAll('.controlPanel_controls-input');
+
+            filters.forEach(function(filter) {
+                filter.addEventListener('click', function() {
+                    userRequest.keyWords.push(this.value);
+                });
+            });
+        });
+
 body
     block content
         div.banner
@@ -19,17 +35,17 @@ body
                     button.controlPanel_input-submit(type='submit') Submit
                 div.controlPanel_controls
                     label(for='food_category') Food
-                        input(type='radio', name='food_category' value='1')
+                        input(type='radio', name='food_category', value='Food', class='controlPanel_controls-input')
                     label(for='food_category') Entertainment
-                        input(type='radio', name='entertainment_category' value='2')
+                        input(type='radio', name='entertainment_category', value='Entertainment', class='controlPanel_controls-input')
                     label(for='food_category') Commerce
-                        input(type='radio', name='commerce_category' value='3')
+                        input(type='radio', name='commerce_category', value='Commerce', class='controlPanel_controls-input')
                     label(for='food_category') Health
-                        input(type='radio', name='health_category' value='4')
+                        input(type='radio', name='health_category', value='Health', class='controlPanel_controls-input')
                     label(for='food_category') Travel
-                        input(type='radio', name='travel_category' value='5')
+                        input(type='radio', name='travel_category', value='Travel', class='controlPanel_controls-input')
                     label(for='food_category') Art
-                        input(type='radio', name='art_category' value='6')
+                        input(type='radio', name='art_category', value='Art', class='controlPanel_controls-input')
         div.listContainer
             ul.listContainer_list
     block footer
