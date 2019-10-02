@@ -7,17 +7,30 @@ head
 
     script(type="text/javascript").
         window.addEventListener('load', function() {
+
             let userRequest = {
                 url: '',
                 keyWords: []
             };
+
             const filters = document.querySelectorAll('.controlPanel_controls-input');
+            const submit = document.getElementById('submit-btn');
 
             filters.forEach(function(filter) {
                 filter.addEventListener('click', function() {
                     userRequest.keyWords.push(this.value);
                 });
             });
+
+            const sendQuery = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", '/search', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(userRequest));
+            }
+
+            submit.addEventListener('click', sendQuery, false);
+
         });
 
 body
@@ -28,11 +41,13 @@ body
             div.clipContain
                 div.banner_clip
                     img.banner_clip-node(src="/node-js-logo.png" alt="Node Logo")
-            div.controlPanel 
+
+            div.controlPanel
                 div.controlPanel_input
                     label.controlPanel_input-label(for="input") Search:
                     input.controlPanel_input-input#input(type='text', placeholder='www.example.com', name='website')
-                    button.controlPanel_input-submit(type='submit') Submit
+                    button.controlPanel_input-submit(type='submit', id="submit-btn") Submit
+
                 div.controlPanel_controls
                     label(for='food_category') Food
                         input(type='radio', name='food_category', value='Food', class='controlPanel_controls-input')
@@ -46,6 +61,7 @@ body
                         input(type='radio', name='travel_category', value='Travel', class='controlPanel_controls-input')
                     label(for='food_category') Art
                         input(type='radio', name='art_category', value='Art', class='controlPanel_controls-input')
+
         div.listContainer
             ul.listContainer_list
     block footer
