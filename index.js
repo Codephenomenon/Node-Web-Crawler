@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'img')));
 
 app.listen(3000, () => {
     console.log('Listening on port 3000.');
-}); 
+});
 
 app.get('/', function (req, res) {
     res.render("layout", {
@@ -21,5 +21,5 @@ app.get('/', function (req, res) {
 
 app.get('/search', function (req, res) {
     console.log(req);
-    functions.getRequest('http://www.codedemos.com/sampleblog');
+    //functions.getRequest('http://www.codedemos.com/sampleblog');
 });
