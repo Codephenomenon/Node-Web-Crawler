@@ -9,8 +9,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'css')));
 app.use(express.static(path.join(__dirname, 'img')));
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000.');
+app.listen(4000, () => {
+    console.log('Listening on port 4000.');
 });
 
 app.get('/', function (req, res) {
@@ -21,5 +21,6 @@ app.get('/', function (req, res) {
 
 app.get('/search', function (req, res) {
     console.log(req);
+    res.send("hello route!");
     //functions.getRequest('http://www.codedemos.com/sampleblog');
 });

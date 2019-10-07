@@ -23,10 +23,10 @@ head
             });
 
             const sendQuery = () => {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", '/search', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(userRequest));
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', 'http://localhost:4000/search', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(userRequest));
             }
 
             submit.addEventListener('click', sendQuery, false);
@@ -37,7 +37,7 @@ body
     block content
         div.banner
             h1.banner_title Website Finder.
-            p.banner_text Search the internet for a list of similar webpages. To start using this tool simply type in the name of a website and browse the list of results. Like webpages with content you want to view in order to populate the list with more relevant results.
+            p.banner_text Search the internet for a list of similar webpages. To start using this tool simply type in the name of a website and browse the list of returned webpages, use the taxonomies to help mitigate ineffectual results. Like webpages with content you want to view in order to populate the list with more relevant results.
             div.clipContain
                 div.banner_clip
                     img.banner_clip-node(src="/node-js-logo.png" alt="Node Logo")
