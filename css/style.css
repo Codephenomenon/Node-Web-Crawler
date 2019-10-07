@@ -102,6 +102,25 @@ script {
     margin-top: 0.3rem;
     width: 100%;
     max-width: 12rem;
+    -webkit-appearance: none;
+}
+
+.controlPanel_input-input:focus {
+    outline: none;
+}
+
+.controlPanel_input-submit {
+    padding: 0.375rem 0.575rem;
+    margin-top: 0.125rem;
+    background-color: #1F71CC;
+    color: #FFF;
+    outline: 0px;
+    border: 1px solid #4099FF;
+    transition: all 0.3s ease;
+}
+
+.controlPanel_input-submit:hover {
+    background-color: #4099FF;
 }
 
 .controlPanel_controls {

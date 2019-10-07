@@ -15,6 +15,7 @@ head
 
             const filters = document.querySelectorAll('.controlPanel_controls-input');
             const submit = document.getElementById('submit-btn');
+            const urlInput = document.getElementById('input');
 
             filters.forEach(function(filter) {
                 filter.addEventListener('click', function() {
@@ -23,6 +24,7 @@ head
             });
 
             const sendQuery = () => {
+                userRequest.url = urlInput.value;
                 let xhr = new XMLHttpRequest();
                 xhr.open('POST', 'http://localhost:4000/search', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');

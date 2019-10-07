@@ -19,8 +19,7 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/search', function (req, res) {
-    console.log(req);
-    res.send("hello route!");
+app.post('/search', function (req, res, next) {
+    console.log(req.data);
     //functions.getRequest('http://www.codedemos.com/sampleblog');
 });
