@@ -24,6 +24,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/search', function (req, res, next) {
-    console.log(req.body);
-    //functions.getRequest('http://www.codedemos.com/sampleblog');
+    const site = req.body.url;
+    const keyWords = req.body.keyWords;
+    functions.splitHttp(site);
+    functions.splitCom(site);
+    functions.getRequest(site);
 });

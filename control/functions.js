@@ -10,5 +10,21 @@ module.exports = {
                 console.log(html);
             }
         });
+    },
+    splitHttp: function(search) {
+        if (search.includes('//')) {
+            console.log('includes slash');
+        } 
+        else {
+            console.log('does not include slash')
+        }
+    },
+    splitCom: function(search) {
+        if (search.includes('.com')) {
+            console.log('includes .com');
+        } 
+        else {
+            console.log('does not include .com')
+        }
     }
 }
