@@ -24,9 +24,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/search', function (req, res, next) {
-    const site = req.body.url;
+    let site = req.body.url;
     const keyWords = req.body.keyWords;
-    functions.splitHttp(site);
-    functions.splitCom(site);
+    site = functions.splitHttp(site);
+    site = functions.splitCom(site);
     functions.getRequest(site);
 });

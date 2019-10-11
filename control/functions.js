@@ -12,19 +12,15 @@ module.exports = {
         });
     },
     splitHttp: function(search) {
-        if (search.includes('//')) {
-            console.log('includes slash');
+        if (search.includes('https://') || search.includes('http://')) {
+            return search;
         } 
-        else {
-            console.log('does not include slash')
-        }
+        return `https://${search}`;
     },
     splitCom: function(search) {
         if (search.includes('.com')) {
-            console.log('includes .com');
+            return search
         } 
-        else {
-            console.log('does not include .com')
-        }
+        return `${search}.com`;
     }
 }
