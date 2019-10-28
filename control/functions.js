@@ -1,24 +1,13 @@
 'use strict'; 
 
 const request = require('request');
-const cheerio = require('cheerio');
-const CircularJSON = require('circular-json');
-
 const comparisons = require('./comparisons.js');
 
 module.exports = {
     getRequest: function(search) {
         request(search, (error, response, html) => {
             if (!error && response.statusCode == 200) {
-                const $ = cheerio.load(html);
-                const title = $('title');
-                const body = $('body');
-                
-                let serialElement = CircularJSON.stringify(body.children());
-                var parsedElement = CircularJSON.parse(serialElement);
-                
-                comparisons.setSiteTitle(title);
-                //comparisons.filterSiteData(parsedElement);
+                comparisons.filterSiteData(html);
             } 
             else if (error) {
                 console.error(error);
