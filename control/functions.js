@@ -2,12 +2,15 @@
 
 const request = require('request');
 const comparisons = require('./comparisons.js');
+const Webpage = require('./webpages');
 
 module.exports = {
     getRequest: function(search) {
         request(search, (error, response, html) => {
             if (!error && response.statusCode == 200) {
-                comparisons.filterSiteData(html);
+                let results = comparisons.filterSiteData(html);
+                const resultPage = new Webpage(results.title, results.headers, results.bodyText);
+                console.log(resultPage);
             } 
             else if (error) {
                 console.error(error);

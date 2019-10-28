@@ -1,6 +1,6 @@
 # Node Web Crawler
 
-This application is a Node and Express server that uses pug to render a form that users can utilize for searching. Node Crawler surfs the waves of the internet to bring you a list of web pages that have content similar to the web page you provide. Users can like list pages to further filter results and increase the relevance of content provided. 
+This application is an Express server utilizing Pug to render a form that helps users find relevant data. Node Crawler surfs the waves of the internet to bring you a list of web pages that contain content similar to the web url you provide. Users can like results to further filter information and increase the relevance of content provided. 
 
 ### Installing
 
