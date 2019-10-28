@@ -1,5 +1,6 @@
 'use strict';
 
+const cheerio = require('cheerio');
 //  JACCARD'S INDEX
 
 let siteData = {
@@ -9,18 +10,19 @@ let siteData = {
 }
 
 module.exports = {
-    filterSiteData: function(parsedElement) {
-        console.log(parsedElement);
+    filterSiteData: function(html) {
+        const $ = cheerio.load(html);
 
-        for (let childElement in parsedElement) {
-            if (typeof childElement == "object" && childElement !== null) {
-                filterSiteData(obj[k]);
-            } else {
-                console.log(childElement);
-            }
-        }
-    },
-    setSiteTitle: function(parsedTitle) {
-        siteData.title = parsedTitle;
+        const title = $('title');
+        siteData.title = title.text();
+
+        let pageHeaders = $('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
+
+        let pageText = $('p');
+        siteData.bodyText.push(pageText.text().replace(/[^a-zA-Z0-9 ]/g, ""));
+        
+        console.log(siteData);
+                
+            
     }
 }
