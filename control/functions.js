@@ -1,6 +1,10 @@
+'use strict';
+
 const request = require('request');
 const cheerio = require('cheerio');
 const CircularJSON = require('circular-json');
+
+const comparisons = require('./comparisons.js');
 
 module.exports = {
     getRequest: function(search) {
@@ -12,16 +16,9 @@ module.exports = {
                 
                 let serialElement = CircularJSON.stringify(body.children());
                 var parsedElement = CircularJSON.parse(serialElement);
-                console.log(parsedElement);
-
-                // Remove junk tags that don't contain text
-                Object.keys(parsedElement).forEach(function(child) {
-                    if (child.type !== 'text' || child.type !== 'tag') {
-                        delete parsedElement[child];
-                    }
-                });
-
-                console.log(parsedElement);
+                
+                comparisons.setSiteTitle(title);
+                //comparisons.filterSiteData(parsedElement);
             } 
             else if (error) {
                 console.error(error);
