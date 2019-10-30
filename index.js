@@ -30,5 +30,5 @@ app.post('/search', function (req, res, next) {
     const keyWords = req.body.keyWords;
     site = functions.splitHttp(site);
     site = functions.splitCom(site);
-    functions.getRequest(site);
+    functions.getRequest(site, keyWords);
 });
