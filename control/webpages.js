@@ -1,10 +1,11 @@
 'use strict';
 
 class Webpage {
-    constructor(title, headerText, bodyText) {
+    constructor(title, headerText, bodyText, keyWords) {
         this._title = title || '';
         this._headerText = headerText || [];
         this._bodyText = bodyText || [];
+        this._keyWords = keyWords || ['Entertainment'];
     }
 
     get Title() {

@@ -5,11 +5,11 @@ const comparisons = require('./comparisons.js');
 const Webpage = require('./webpages');
 
 module.exports = {
-    getRequest: function(search) {
+    getRequest: function(search, keyWords) {
         request(search, (error, response, html) => {
             if (!error && response.statusCode == 200) {
                 let results = comparisons.filterSiteData(html);
-                const resultPage = new Webpage(results.title, results.headers, results.bodyText);
+                const resultPage = new Webpage(results.title, results.headers, results.bodyText, keyWords);
                 console.log(resultPage);
             } 
             else if (error) {
