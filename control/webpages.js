@@ -5,7 +5,7 @@ class Webpage {
         this._title = title || '';
         this._headerText = headerText || [];
         this._bodyText = bodyText || [];
-        this._keyWords = keyWords || ['Entertainment'];
+        this._keyWords = keyWords || [];
     }
 
     get Title() {

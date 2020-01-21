@@ -2,7 +2,7 @@
 
 const request = require('request');
 const comparisons = require('./comparisons.js');
-const Webpage = require('./webpages');
+const Webpage = require('./webPages');
 
 module.exports = {
     getRequest: function(search, keyWords) {
@@ -11,6 +11,8 @@ module.exports = {
                 let results = comparisons.filterSiteData(html);
                 const resultPage = new Webpage(results.title, results.headers, results.bodyText, keyWords);
                 console.log(resultPage);
+
+                // Render results component
             } 
             else if (error) {
                 console.error(error);

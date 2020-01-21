@@ -1,5 +1,5 @@
 'use strict';
-
+ 
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -21,7 +21,9 @@ app.listen(4000, () => {
 
 app.get('/', function (req, res) {
     res.render("layout", {
-        title: 'Node Crawler'
+        title: 'Node Crawler',
+        results: '',
+        keywords: ''
     });
 });
 
@@ -31,4 +33,14 @@ app.post('/search', function (req, res, next) {
     site = functions.splitHttp(site);
     site = functions.splitCom(site);
     functions.getRequest(site, keyWords);
+    res.send({responseURL: '/search'});
+}); 
+
+// Render response component
+app.get('/search', function (req, res, next) {
+    res.render("layout", {
+        title: 'Crawler Results',
+        results: 'THIS IS A TEST',
+        keywords: 'wowza'
+    });
 });

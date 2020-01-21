@@ -29,11 +29,19 @@ head
                 xhr.open('POST', 'http://localhost:4000/search', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.send(JSON.stringify(userRequest));
-                urlInput.value = '';
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState < 4)    
+                        console.log('Loading server response.');
+                    else if (xhr.readyState === 4) {     
+                        if (xhr.status == 200 && xhr.status < 300)
+                            // redirect to results page
+                            window.location.href = xhr.responseURL;
+                    }
+                }
             }
 
             submit.addEventListener('click', sendQuery, false);
-
         });
 
 body
@@ -66,7 +74,11 @@ body
                         input(type='radio', name='art_category', value='Art', class='controlPanel_controls-input')
 
         div.listContainer
+            div.searchResults#result
+                p #{ results }
+                p #{ keywords }
             ul.listContainer_list
     block footer
         footer.footer
-            p footer content
+            p This app is free to use and modify as you see fit.
+            p Created by #[a(href="") Daniel Clayton]
